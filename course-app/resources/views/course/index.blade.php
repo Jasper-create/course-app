@@ -18,6 +18,7 @@
             <tr>
                 <td>{{$course->title}}</td>
                 <td>{{$course->description}}</td>
+                <td>{{$course->courseHead}}</td>
             </tr>
         @endforeach
     </tbody>

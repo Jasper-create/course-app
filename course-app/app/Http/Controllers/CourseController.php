@@ -16,10 +16,15 @@ class CourseController extends Controller
 
     public function create(){
         //routing to page/view whish will hold the create form
+        return view('course.create');
     }
 
     public function store(Request $request){
         //This would create the enr for the course
+
+        //on this sample we skip the verification but on practice you should not do so.
+        Course::create($request->all());
+        return redirect()->route('course.index');
     }
 
     public function show($id){
