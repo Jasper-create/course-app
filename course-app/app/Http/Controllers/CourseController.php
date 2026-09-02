@@ -33,10 +33,15 @@ class CourseController extends Controller
 
     public function edit($id){
         //edit data
+        $course=Course::find($id);
+        return view('course.edit', compact('course'));
     }
 
-    public function update(Request $request, $iid){
+    public function update(Request $request, $id){
         //Logic to update the record in the database and do something post that
+        //use validation first before updating data
+        Course::find($id)->update($request->all());
+        return redirect()->route('course.index');
     }
 
     public function destroy($id){

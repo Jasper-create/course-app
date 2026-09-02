@@ -19,6 +19,12 @@
                 <td>{{$course->title}}</td>
                 <td>{{$course->description}}</td>
                 <td>{{$course->courseHead}}</td>
+
+                {{$course->id}}
+                <td>
+                    <a href="{{route('course.show', $course->id)}}">View</a>
+                    <a href="{{route('course.edit', $course->id)}}">Edit</a>
+                </td>
             </tr>
         @endforeach
     </tbody>
