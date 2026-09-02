@@ -16,8 +16,8 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('title');
-            $table->string('discription');
-            $table->string('coursHead');
+            $table->string('description');
+            $table->string('courseHead');
         });
     }
 
