@@ -19,3 +19,7 @@ Route::put('courses/{course}', [CourseController::class, 'update'])->name('cours
 
 //Show course details
 Route::get('/courses/{course}/show', [CourseController::class, 'show'])->name('course.show');
+
+
+//Delete the course
+Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('course.destroy');

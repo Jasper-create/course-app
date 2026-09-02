@@ -29,6 +29,8 @@ class CourseController extends Controller
 
     public function show($id){
         //fetching the data from the database
+        $course = Course::find($id);
+        return view('course.show', compact('course'));
     }
 
     public function edit($id){
@@ -46,5 +48,9 @@ class CourseController extends Controller
 
     public function destroy($id){
         //Delete data entry
+        // proper practice is to validate first 
+        Course::find($id)->delete();
+        return redirect()->route('course.index');
+
     }
 }
